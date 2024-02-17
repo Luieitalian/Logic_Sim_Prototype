@@ -1,0 +1,16 @@
+{
+  "name": "logic_sim_prototype",
+  "version": "1.0.0",
+  "description": "A Simulation of Common Logical Units in Computer Science",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Logic",
+    "Logical",
+    "Gates"
+  ],
+  "author": "Berke Pite",
+  "license": "MIT"
+}

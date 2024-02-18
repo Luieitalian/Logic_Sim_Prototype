@@ -1,4 +1,4 @@
-# Logic Simulation
+# Logic Simulation ![GitHub License](https://img.shields.io/github/license/Luieitalian/Logic_Sim_Prototype)
 
 ## This is an open source project to simulate common logical units in computer science
 
@@ -23,7 +23,7 @@ TODO
 
 ## License
 
-![GitHub License](https://img.shields.io/github/license/Luieitalian/Logic_Sim_Prototype)
+
 
 
 ## Badges

@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react"
 import React from 'react'
-import ORGate from "../gates/or";
-import { InputNode, OutputNode } from "../gates/logic";
-import { newORGate } from "../gates/gateFactory";
+import { newORGate } from "@/src/gates/gateFactory";
+import ORGateSVG from "@/src/svgs/ORGateSVG";
 
 const ORGateComponent = () => {
     const [gateComp, setGateComp] = useState(newORGate([0, 1, 1, 1, 1, 0, 1]));
 
     useEffect(() => {
-        console.log("Rendered");
+        console.log(`Rendered`);
     }, []);
 
+    const onButtonClick = () => {
+        console.log(gateComp.outputNode.val);
+    }
+
     return (
-        <button><span>Or Gate : </span>{gateComp.outputNode.val}</button>
+        <button type="button" onClick={onButtonClick}>
+            <ORGateSVG inputs={5} width={300} height={200}/>
+        </button>
     );
 }
 

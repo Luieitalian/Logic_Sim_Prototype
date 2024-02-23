@@ -1,15 +1,10 @@
 import { InputNode, OutputNode, Gate } from "./logic";
 
-interface OR extends Gate {
-    inputNodes: InputNode[];
-    outputNode: OutputNode;
-}
-
-class ORGate implements OR {
+class OR implements Gate {
     inputNodes: InputNode[];
     outputNode: OutputNode;
 
-    Function(): number {
+    Evaluate(): number {
         for (let i = 0; i < this.inputNodes.length; i++) {
             if (this.inputNodes[i].val >= 1){
                 this.outputNode.val = 1;
@@ -21,7 +16,7 @@ class ORGate implements OR {
         return this.outputNode.val;
     }
 
-    static Func(_in: number[]): number  {
+    static Evaluate(_in: number[]): number  {
         for (let i = 0; i < _in.length; i++) {
             if (_in[i] >= 1){
                 return 1;
@@ -30,7 +25,7 @@ class ORGate implements OR {
         return 0;
     }
 
-    constructor(
+    constructor (
         inputNodes: InputNode[] = [], 
         outputNode: OutputNode = new OutputNode
         ) {
@@ -39,4 +34,4 @@ class ORGate implements OR {
     }
 }
 
-export default ORGate;
+export default OR;

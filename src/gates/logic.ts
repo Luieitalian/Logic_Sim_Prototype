@@ -17,5 +17,7 @@ export class OutputNode implements Node {
 }
 
 export interface Gate {
-    Function(): void;
+    inputNodes: InputNode | InputNode[];
+    outputNode: OutputNode;
+    Evaluate(): number;
 }

@@ -5,16 +5,16 @@ interface Switch extends Gate {
     outputNode: OutputNode;
 }
 
-class SwitchGate implements Switch {
+class Switch implements Switch {
     inputNode: InputNode;
     outputNode: OutputNode;
 
-    Function(): number {
+    Evaluate(): number {
         this.outputNode.val = this.inputNode.val;
         return this.outputNode.val;
     }
 
-    static Func(_in: number): number {
+    static Evaluate(_in: number): number {
         return _in;
     }
 
@@ -27,4 +27,4 @@ class SwitchGate implements Switch {
     }
 }
 
-export default SwitchGate;
+export default Switch;

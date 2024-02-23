@@ -1,21 +1,21 @@
 import { InputNode, OutputNode } from "./logic";
-import ORGate from "./or";
-import SwitchGate from "./switch";
+import OR from "./or";
+import Switch from "./switch";
 
 export function newSwitchGate(_in: number)
-: SwitchGate {
+: Switch {
     const inputNode: InputNode = new InputNode(_in as number);
-    const outputNode: OutputNode = new OutputNode(SwitchGate.Func(_in as number));
-    const newGate: SwitchGate = new SwitchGate(inputNode, outputNode);
+    const outputNode: OutputNode = new OutputNode(Switch.Evaluate(_in as number));
+    const newGate: Switch = new Switch(inputNode, outputNode);
     return newGate;
 }
 
 export function newORGate(_in: number[])
-: ORGate {
+: OR {
     const inputNodes: InputNode[] = _in.map((num) => {
         return new InputNode(num);
     });
-    const outputNode: OutputNode = new OutputNode(ORGate.Func(_in));
-    const newGate: ORGate = new ORGate(inputNodes, outputNode);
+    const outputNode: OutputNode = new OutputNode(OR.Evaluate(_in));
+    const newGate: OR = new OR(inputNodes, outputNode);
     return newGate;
 }

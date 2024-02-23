@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import React from 'react'
-import { newSwitchGate } from "../gates/gateFactory";
+import { newSwitchGate } from "@/src/gates/gateFactory";
+import Switch from "@/src/gates/switch";
 
 const SwitchGateComponent = () => {
     const [gateComp, setGateComp] = useState(newSwitchGate(0));
@@ -10,7 +11,7 @@ const SwitchGateComponent = () => {
     }, []);
 
     const onClickEvent = () => {
-        setGateComp((prev) => newSwitchGate(prev.inputNode.val > 0 ? 0 : 1));
+        setGateComp((prev: Switch) => newSwitchGate(prev.inputNode.val > 0 ? 0 : 1));
         console.log("Clicked Switch Gate");
     }
 

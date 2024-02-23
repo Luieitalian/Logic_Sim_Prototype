@@ -6,7 +6,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [TODO](#todo)
 - [License](#license)
 
 ## Installation
@@ -21,6 +21,12 @@
 
 TODO
 
-## How to Contribute
+## TODO
 
-TODO
+- [] Develop gate interactions.
+- [] Create gates via right clicking the window.
+- [] Allow changing gate attributes with context menu.
+
+## License
+
+MIT

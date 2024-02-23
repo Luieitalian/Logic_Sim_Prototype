@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import React, { StrictMode } from 'react'
-import Window from "./components/Window"
+import Window from "@/src/components/Window"
 import "@/src/style.css"
 
 const container = document.getElementById('window');

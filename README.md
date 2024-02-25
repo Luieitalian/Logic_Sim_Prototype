@@ -23,9 +23,9 @@ TODO
 
 ## TODO
 
-- [] Develop gate interactions.
-- [x] Create gates via right clicking the window.
-- [] Allow changing gate attributes with context menu.
+- [ ] Develop gate interactions.
+- [ ] Create gates via right clicking the window.
+- [ ] Allow changing gate attributes with context menu.
 
 ## License
 

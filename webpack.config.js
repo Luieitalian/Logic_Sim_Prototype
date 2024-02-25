@@ -33,10 +33,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-        '@': path.resolve(__dirname)
+      '@': path.resolve(__dirname),
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx'], // Allow imports without file extensions
-    fallback: {"path": false},
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'], // Allow imports without file extensions
+    fallback: {path: false},
   },
   devtool: 'source-map',
 };

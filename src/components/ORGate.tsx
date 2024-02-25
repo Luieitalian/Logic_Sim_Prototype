@@ -1,28 +1,44 @@
-import { MutableRefObject, useState } from "react"
+import { MutableRefObject, useEffect, useState } from "react"
 import React from 'react'
-import { newORGate } from "@/src/gates/gateFactory";
 import ORGateSVG from "@/src/svgs/ORGateSVG";
+import { GatePropsContextType } from "@/src/contexts/GatePropsContext";
 
-type ORGateProps = {
-    onGateRightClick: Function,
-    id: MutableRefObject<number> | undefined,
-}
 
-const ORGate = ({ onGateRightClick, id }: ORGateProps) => {
-    const [gateComp, setGateComp] = useState(newORGate([0, 1, 1, 1, 1, 0, 1]));
+const ORGate = ({ onGateRightClick, onGateMouseDown, onGateMouseMove, onGateMouseUp, id }: GatePropsContextType) => {
+    const [inputs, setInputs] = useState<number[]>([0, 0]);
+    const [output, setOutput] = useState<number>(0);
     const [size, setSize] = useState(1);
-    const [inputNo, setInputNo] = useState(2);
+
+    const Evaluate = () => {
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i] >= 1) {
+                setOutput(1);
+                return;
+            }
+        }
+        setOutput(0);
+    }
+
+    useEffect(() => {
+        Evaluate();
+    }, [inputs]);
 
     const onContextMenu = (e: React.MouseEvent<HTMLElement>) => {
         onGateRightClick(e);
     }
-
+    const onMouseDown = (e: React.MouseEvent<HTMLButtonElement>) => {
+        onGateMouseDown(e);
+    }
+    const onMouseUp = (e: React.MouseEvent<HTMLButtonElement>) => {
+        onGateMouseUp(e);
+    }
+    const onMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+        onGateMouseMove(e);
+    }
     return (
-
-        <button id={(id as MutableRefObject<number>).current.toString() } type="button" onContextMenu={onContextMenu}>
-            <ORGateSVG inputNo={inputNo} size={size} />
+        <button className="absolute" onMouseUp={onMouseUp} onMouseMove={onMouseMove} onMouseDown={onMouseDown} id={(id as MutableRefObject<number>).current.toString()} type="button" onContextMenu={onContextMenu}>
+            <ORGateSVG inputNo={inputs.length} size={size} />
         </button>
-
     );
 }
 

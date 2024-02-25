@@ -44,7 +44,6 @@ const ORGateSVG = (props: ORGateSVGProps) => {
                     strokeWidth: strokeWidth,
                 }} />
             <path
-                //d={`M 50 0 L 200 0 Q 300 100 200 200 L 50 200 Q 100 100 50 0`}
                 d={`M 20 0 L ${height} 0 Q ${width} ${height / 2} ${height} ${height} L 20 ${height} Q ${width / 2} ${height / 2} 20 0`}
                 fill="url(#grad1)"
             />
